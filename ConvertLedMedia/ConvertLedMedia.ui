@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConvertLedMediaClass</class>
+ <widget class="QMainWindow" name="ConvertLedMediaClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>309</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>ConvertLedMedia</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ConvertLedMedia.qrc">
+    <normaloff>:/main_icon</normaloff>:/main_icon</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>0.800000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+  background-color: black;
+  color: white;
+  font: 400 20pt &quot;Microsoft YaHei UI&quot;;
+}
+#titleLabel
+{
+  border:0px dashed white;
+  border-radius: 15px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="titleLabel">
+      <property name="text">
+       <string>Drop Image Here</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ConvertLedMedia.qrc"/>
+ </resources>
+ <connections/>
+</ui>

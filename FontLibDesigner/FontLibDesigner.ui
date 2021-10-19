@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FontLibDesignerClass</class>
+ <widget class="QMainWindow" name="FontLibDesignerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>353</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Font Lib Designer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">* {
+  font-family: &quot;Arial&quot;, &quot;Segoe UI&quot;, &quot;黑体&quot;, &quot;等线&quot;;
+  color: white;
+  background: rgb(50, 50, 50);
+}
+*:!enabled {
+  color: rgb(155, 155, 155);
+}
+
+#codeBrowser {
+  font-family: &quot;Consolas&quot;;
+}
+#mainColor {
+  background-color: #fff;
+}
+#subColor {
+  background-color: #000;
+}
+/**********子界面背景********* */
+
+QDockWidget &gt; QWidget {
+  background: rgb(75, 75, 75);
+}
+QDockWidget,
+QLabel {
+  font-size: 14px;
+  color: white;
+}
+QDockWidget::title {
+  text-align: center;
+  background: rgb(90, 90, 90);
+}
+
+QLabel {
+  background: transparent;
+}
+/**********提示********* */
+QToolTip {
+  color: yellow;
+  border: 2px solid #333;
+}
+
+/**********菜单********* */
+QMenu {
+  border: 1px solid rgb(100, 100, 100);
+  background: rgb(68, 69, 73);
+}
+QMenu::item {
+  height: 22px;
+  padding: 0px 25px 0px 20px;
+}
+QMenu::item:enabled {
+  color: rgb(225, 225, 225);
+}
+QMenu::item:enabled:selected {
+  color: rgb(230, 230, 230);
+  background: rgba(255, 255, 255, 80);
+}
+QMenu::separator {
+  height: 1px;
+  background: rgb(100, 100, 100);
+}
+QMenu::indicator {
+  width: 13px;
+  height: 13px;
+}
+QMenu::icon {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+/**********分组框********* */
+QGroupBox {
+  font-size: 12px;
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+QGroupBox::title {
+  color: rgb(175, 175, 175);
+  top: -12px;
+  left: 10px;
+}
+
+/**********页签项********* */
+QTabWidget::pane {
+  border: none;
+  border-top: 3px solid rgb(0, 160, 230);
+  background: rgb(57, 58, 60);
+}
+QTabWidget::tab-bar {
+  border: none;
+}
+QTabBar::tab {
+  border: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: rgb(175, 175, 175);
+  background: rgb(255, 255, 255, 30);
+  height: 28px;
+  min-width: 85px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+QTabBar::tab:hover {
+  background: rgb(255, 255, 255, 40);
+}
+QTabBar::tab:selected {
+  color: white;
+  background: rgb(0, 160, 230);
+}
+
+/**********表头********* */
+QHeaderView {
+  border: none;
+  border-bottom: 3px solid rgb(0, 160, 230);
+  background: rgb(57, 58, 60);
+  min-height: 30px;
+}
+QHeaderView::section:horizontal {
+  border: none;
+  color: white;
+  background: transparent;
+  padding-left: 5px;
+}
+QHeaderView::section:horizontal:hover {
+  background: rgb(0, 160, 230);
+}
+QHeaderView::section:horizontal:pressed {
+  background: rgb(0, 180, 255);
+}
+
+/**********表格********* */
+QTableView,
+QTreeView,
+QListView {
+  border: 1px solid rgb(45, 45, 45);
+  background: rgb(57, 58, 60);
+  gridline-color: rgb(60, 60, 60);
+}
+QTableView::item,
+QTreeView::item,
+QListView::item {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  background: rgb(72, 72, 74);
+  border-right: 1px solid rgb(45, 45, 45);
+  border-bottom: 1px solid rgb(45, 45, 45);
+}
+QTableView::item:selected,
+QTreeView::item:selected,
+QListView::item:selected {
+  background: rgba(202, 81, 0, 50);
+}
+QTableView::item:selected:!active,
+QTreeView::item:selected:!active,
+QListView::item:selected:!active {
+  color: white;
+}
+QTableView::indicator,
+QTreeView::indicator,
+QListView::indicator {
+  width: 20px;
+  height: 20px;
+}
+
+/**********滚动条-水平********* */
+QScrollBar:horizontal {
+  height: 20px;
+  background: transparent;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+QScrollBar::handle:horizontal {
+  height: 20px;
+  min-width: 30px;
+  background: rgb(68, 69, 73);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+QScrollBar::handle:horizontal:hover {
+  background: rgb(80, 80, 80);
+}
+QScrollBar::sub-line:horizontal {
+  width: 15px;
+  background: transparent;
+  subcontrol-position: left;
+}
+QScrollBar::add-line:horizontal {
+  width: 15px;
+  background: transparent;
+  subcontrol-position: right;
+}
+QScrollBar::sub-line:horizontal:hover {
+  background: rgb(68, 69, 73);
+}
+QScrollBar::add-line:horizontal:hover {
+  background: rgb(68, 69, 73);
+}
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+  background: transparent;
+}
+
+/**********滚动条-垂直********* */
+QScrollBar:vertical {
+  width: 20px;
+  background: transparent;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+QScrollBar::handle:vertical {
+  width: 20px;
+  min-height: 30px;
+  background: rgb(68, 69, 73);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+QScrollBar::handle:vertical:hover {
+  background: rgb(80, 80, 80);
+}
+QScrollBar::sub-line:vertical,
+QScrollBar::add-line:vertical {
+  border: 2px solid rgb(90, 90, 90);
+}
+QScrollBar::sub-line:vertical:hover,
+QScrollBar::add-line:vertical:hover {
+  background: rgb(68, 69, 73);
+}
+QScrollBar::up-arrow:vertical,
+QScrollBar::down-arrow:vertical {
+  width: 14px;
+  height: 20px;
+  background: rgb(90, 90, 90);
+}
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+  background: none;
+}
+
+/**********下拉列表********* */
+QComboBox {
+  height: 25px;
+  border-radius: 4px;
+  border: 1px solid rgb(100, 100, 100);
+  background: rgb(72, 72, 73);
+}
+QComboBox:enabled {
+  color: rgb(175, 175, 175);
+}
+QComboBox:enabled:hover,
+QComboBox:enabled:focus {
+  color: rgb(230, 230, 230);
+  background: rgb(68, 69, 73);
+}
+QComboBox::drop-down {
+  width: 20px;
+  border: none;
+  background: transparent;
+}
+QComboBox::drop-down:hover {
+  background: rgba(255, 255, 255, 30);
+}
+QComboBox QAbstractItemView {
+  border: 1px solid rgb(100, 100, 100);
+  background: rgb(68, 69, 73);
+  outline: none;
+}
+QComboBox QAbstractItemView::item {
+  height: 25px;
+  color: rgb(175, 175, 175);
+}
+QComboBox QAbstractItemView::item:selected {
+  background: rgba(255, 255, 255, 40);
+  color: rgb(230, 230, 230);
+}
+
+/**********进度条********* */
+QProgressBar {
+  border: 3px solid rgb(68, 69, 73);
+  text-align: center;
+  color: white;
+  background: rgb(50, 50, 50);
+}
+QProgressBar::chunk {
+  background: rgb(0, 160, 230);
+}
+
+/**********复选框********* */
+/**********单选框********* */
+QCheckBox,
+QRadioButton {
+  spacing: 5px;
+}
+QCheckBox,
+QCheckBox {
+  color: #afafaf;
+}
+QCheckBox:enabled:hover,
+QRadioButton:enabled:hover {
+  color: #c8c8c8;
+  background-color: #666;
+}
+QCheckBox:enabled:checked,
+QRadioButton:enabled:checked {
+  color: green;
+}
+QCheckBox:enabled:checked:hover,
+QRadioButton:enabled:checked:hover {
+  color: green;
+}
+QCheckBox::indicator,
+QRadioButton::indicator {
+  width: 20px;
+  height: 20px;
+}
+
+/**********输入框********* */
+QLineEdit {
+  height: 25px;
+  border: 2px solid rgb(120, 130, 120);
+  background: rgb(72, 72, 73);
+}
+QLineEdit:enabled {
+  color: rgb(175, 175, 175);
+}
+QLineEdit:enabled:hover,
+QLineEdit:enabled:focus {
+  color: rgb(230, 230, 230);
+  border: 2px solid rgb(140, 160, 180);
+}
+
+/**********文本编辑框********* */
+QTextEdit {
+  border: 1px solid rgb(45, 45, 45);
+  color: rgb(175, 175, 175);
+  background: rgb(57, 58, 60);
+}
+
+/**********滚动区域********* */
+QScrollArea {
+  border: 1px solid rgb(45, 45, 45);
+  background: rgb(57, 58, 60);
+}
+QScrollBar::add-line:vertical {
+  height: 0px;
+  background-color: transparent;
+  subcontrol-position: bottom;
+}
+QScrollBar::sub-line:vertical {
+  height: 0px;
+  background-color: transparent;
+  subcontrol-position: top;
+}
+
+/**********按钮********* */
+QPushButton {
+  border: 2px solid rgb(85, 85, 85);
+  width: 75px;
+  height: 25px;
+}
+QPushButton:enabled {
+  background: rgb(59, 59, 59);
+  color: white;
+}
+QPushButton:checked {
+  border-color: green;
+}
+QPushButton:enabled:hover {
+  background: rgb(120, 120, 120);
+}
+QPushButton:enabled:pressed {
+  background: rgb(90, 90, 90);
+}
+/******* ToolBox ******/
+QToolBox::tab {
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: rgb(140, 160, 180);
+}
+QToolBox::tab:first {
+  border-top-width: 0px;
+}
+QToolBox::tab:last {
+  border-bottom-width: 0px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="displayGroupBox">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>123</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>180</width>
+        <height>123</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="2">
+        <widget class="QSpinBox" name="outerBorderWidth">
+         <property name="suffix">
+          <string>px</string>
+         </property>
+         <property name="value">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="outerBorderLabel">
+         <property name="text">
+          <string>外边框</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="innerBorderLabel">
+         <property name="text">
+          <string>内边框</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="pixelLengthLabel">
+         <property name="text">
+          <string>像素尺寸</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QSpinBox" name="innerBorderWidth">
+         <property name="suffix">
+          <string>px</string>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QPushButton" name="outerColor">
+         <property name="minimumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QPushButton" name="innerColor">
+         <property name="minimumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" colspan="2">
+        <widget class="QSpinBox" name="pixelLength">
+         <property name="suffix">
+          <string>px</string>
+         </property>
+         <property name="value">
+          <number>16</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="gridGroupBox">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>123</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>180</width>
+        <height>123</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="3">
+        <widget class="QPushButton" name="mainColor">
+         <property name="minimumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pencilButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="5">
+        <widget class="QPushButton" name="loadImage">
+         <property name="text">
+          <string>载入图像</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QPushButton" name="clearColorMap">
+         <property name="text">
+          <string>清空</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="pencilLabel">
+         <property name="text">
+          <string>画笔</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QPushButton" name="subColor">
+         <property name="minimumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pencilButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Ignored</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <widget class="QGroupBox" name="exportGroupBox">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>136</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>格式化</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="useFmtHtml">
+         <property name="text">
+          <string>HTML</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">fmtButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QRadioButton" name="useFmtCpp">
+         <property name="text">
+          <string>C++</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">fmtButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCheckBox" name="useMatrix2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>二维数组</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QRadioButton" name="useFmtPython">
+         <property name="text">
+          <string>Python</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">fmtButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QRadioButton" name="useFmtJson">
+         <property name="text">
+          <string>JSON</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">fmtButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QCheckBox" name="useColor3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>三色分离</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <widget class="QPlainTextEdit" name="codeBrowser">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QDockWidget" name="ledDockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>134</width>
+     <height>314</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="windowTitle">
+    <string>Led Grid</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>0</number>
+     </property>
+     <item row="1" column="0">
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>132</width>
+          <height>290</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="LedCharacterEdit" name="ledCharacterEdit"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="FontLibDesigner.qrc">
+     <normaloff>:/icon_new</normaloff>:/icon_new</iconset>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="toolTip">
+    <string>新建</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="FontLibDesigner.qrc">
+     <normaloff>:/icon_open</normaloff>:/icon_open</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="toolTip">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>LedCharacterEdit</class>
+   <extends>QWidget</extends>
+   <header>LedCharacterEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>loadImage</tabstop>
+  <tabstop>clearColorMap</tabstop>
+  <tabstop>mainColor</tabstop>
+  <tabstop>subColor</tabstop>
+  <tabstop>pixelLength</tabstop>
+  <tabstop>outerBorderWidth</tabstop>
+  <tabstop>outerColor</tabstop>
+  <tabstop>innerBorderWidth</tabstop>
+  <tabstop>innerColor</tabstop>
+  <tabstop>codeBrowser</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
+ <resources>
+  <include location="FontLibDesigner.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>clearColorMap</sender>
+   <signal>clicked()</signal>
+   <receiver>ledCharacterEdit</receiver>
+   <slot>clearColorMap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pixelLength</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ledCharacterEdit</receiver>
+   <slot>setPixelLength(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>innerBorderWidth</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ledCharacterEdit</receiver>
+   <slot>setInnerBorderWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>outerBorderWidth</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ledCharacterEdit</receiver>
+   <slot>setOuterBorderWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>useFmtHtml</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>useMatrix2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>228</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>useFmtHtml</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>useColor3</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>227</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <buttongroups>
+  <buttongroup name="colorButtonGroup"/>
+  <buttongroup name="fmtButtonGroup"/>
+  <buttongroup name="pencilButtonGroup"/>
+ </buttongroups>
+</ui>
